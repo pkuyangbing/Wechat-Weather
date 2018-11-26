@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>天气预报</title>
+<!-- meta使用viewport以确保页面可自由缩放 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 引入 jQuery Mobile 样式 -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<!-- 引入 jQuery 库 -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- 引入 jQuery Mobile 库 -->
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+</style>
+</head>
+<body >
+<div data-role="page" data-theme=b>
+<div data-role="header">
+<h1>迷你天气</h1>
+</div>
+<div data-role="main" class="ui-content">
+ <div data-role="collapsibleset"><!-- 折叠集合 -->
+      <div data-role="collapsible">
+        <h3>北京天气</h3>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+      <thead>
+        <tr>
+          <th data-priority="1">日期</th>
+          <th data-priority="1">星期</th>
+          <th data-priority="2">天气</th>
+          <th data-priority="3">温度</th>
+          <th data-priority="4">pm2.5</th>
+          <th>风向</th>
+          <th data-priority="5">风力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11.23</td>
+          <td>周五</td>
+          <td>多云</td>
+          <td>-15-15</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.24</td>
+          <td>周六</td>
+          <td>多云转晴</td>
+          <td>-15-10</td>
+          <td>150</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.25</td>
+          <td>周日</td>
+          <td>大雪</td>
+          <td>-30-15</td>
+          <td>350</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.26</td>
+          <td>周一</td>
+          <td>暴雪</td>
+          <td>-15~-10</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>1级</td>
+        </tr>
+
+      </tbody>
+    </table>
+      </div>
+      <div data-role="collapsible">
+        <h3>上海天气</h3>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+      <thead>
+        <tr>
+          <th data-priority="1">日期</th>
+          <th data-priority="1">星期</th>
+          <th data-priority="2">天气</th>
+          <th data-priority="3">温度</th>
+          <th data-priority="4">pm2.5</th>
+          <th>风向</th>
+          <th data-priority="5">风力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11.23</td>
+          <td>周五</td>
+          <td>多云</td>
+          <td>-15-15</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.24</td>
+          <td>周六</td>
+          <td>多云转晴</td>
+          <td>-15-10</td>
+          <td>150</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.25</td>
+          <td>周日</td>
+          <td>大雪</td>
+          <td>-30-15</td>
+          <td>350</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.26</td>
+          <td>周一</td>
+          <td>暴雪</td>
+          <td>-15~-10</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>1级</td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+      <div data-role="collapsible">
+        <h3>铁岭天气</h3>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+      <thead>
+        <tr>
+          <th data-priority="1">日期</th>
+          <th data-priority="1">星期</th>
+          <th data-priority="2">天气</th>
+          <th data-priority="3">温度</th>
+          <th data-priority="4">pm2.5</th>
+          <th>风向</th>
+          <th data-priority="5">风力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11.23</td>
+          <td>周五</td>
+          <td>多云</td>
+          <td>-15-15</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.24</td>
+          <td>周六</td>
+          <td>多云转晴</td>
+          <td>-15-10</td>
+          <td>150</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.25</td>
+          <td>周日</td>
+          <td>大雪</td>
+          <td>-30-15</td>
+          <td>350</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.26</td>
+          <td>周一</td>
+          <td>暴雪</td>
+          <td>-15~-10</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>1级</td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+      <div data-role="collapsible">
+        <h3>大连天气</h3>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="myTable">
+      <thead>
+        <tr>
+          <th data-priority="1">日期</th>
+          <th data-priority="1">星期</th>
+          <th data-priority="2">天气</th>
+          <th data-priority="3">温度</th>
+          <th data-priority="4">pm2.5</th>
+          <th>风向</th>
+          <th data-priority="5">风力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11.23</td>
+          <td>周五</td>
+          <td>多云</td>
+          <td>-15-15</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.24</td>
+          <td>周六</td>
+          <td>多云转晴</td>
+          <td>-15-10</td>
+          <td>150</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.25</td>
+          <td>周日</td>
+          <td>大雪</td>
+          <td>-30-15</td>
+          <td>350</td>
+          <td>东北风</td>
+          <td>4级</td>
+        </tr>
+        <tr>
+          <td>11.26</td>
+          <td>周一</td>
+          <td>暴雪</td>
+          <td>-15~-10</td>
+          <td>50</td>
+          <td>东北风</td>
+          <td>1级</td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+    </div>
+</div>
+<div data-role="footer">
+<center>
+动态添加你所关注城市
+<p><input type="text" name="city"><input type=submit value="查询"></p>
+</center>
+
+</div>
+</div>
+</body>
+</html>
